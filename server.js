@@ -388,7 +388,7 @@ app.get("/", (_req, res) => {
   <div class="endpoint">
     <div class="endpoint-body">
       <div class="ep-section">JavaScript (fetch)</div>
-      <pre>const res = await fetch('http://localhost:3000/api/v1/calculate', {
+      <pre>const res = await fetch('https://nigerian-cgpa.up.railway.app/api/v1/calculate', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -404,7 +404,7 @@ console.log(data.gpa, data.classOfDegree);</pre>
       <div class="ep-section">Python (requests)</div>
       <pre>import requests
 
-res = requests.post('http://localhost:3000/api/v1/calculate', json={
+res = requests.post('https://nigerian-cgpa.up.railway.app/api/v1/calculate', json={
     'courses': [
         {'code': 'CSC 312', 'credits': 3, 'score': 74},
         {'code': 'MTH 301', 'credits': 2, 'score': 61},
@@ -414,7 +414,7 @@ data = res.json()
 print(data['gpa'], data['classOfDegree'])</pre>
 
       <div class="ep-section">cURL</div>
-      <pre>curl -X POST http://localhost:3000/api/v1/calculate \\
+      <pre>curl -X POST https://nigerian-cgpa.up.railway.app/api/v1/calculate \\
   -H "Content-Type: application/json" \\
   -d '{"courses":[{"code":"CSC 312","credits":3,"score":74}]}'</pre>
     </div>
@@ -527,7 +527,7 @@ app.post(`${BASE}/transcript`, (req, res) => {
 // 404 catch-all
 // ─────────────────────────────────────────────────────────────────────────────
 app.use((req, res) => {
-  fail(res, `Cannot ${req.method} ${req.path}. See docs at http://localhost:${PORT}`, 404);
+  fail(res, `Cannot ${req.method} ${req.path}. See docs at https://nigerian-cgpa.up.railway.app`, 404);
 });
 
 app.listen(PORT, () => {
